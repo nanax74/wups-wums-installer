@@ -15,4 +15,6 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
     bash ./internal/install-wut
     bash ./internal/install-wups-wums
     bash ./internal/pre-install
+
+    echo "[Installation complate!]"
 )

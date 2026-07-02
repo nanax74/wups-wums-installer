@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+export DEVKITPRO="/opt/devkitpro"
+export DEVKITPPC="/opt/devkitpro/devkitPPC"
+export PATH="/opt/devkitpro/devkitPPC/bin:$PATH"
+
 apt-get update
 apt-get install bzip2 -y
 
@@ -34,12 +38,10 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
         exit 1
     }
 
-    cp -r bin /opt/devkitpro/wups/
+    cp -r ../bin /opt/devkitpro/wups/
     chmod +x /opt/devkitpro/wups/bin/*
 
-    cp -r share /opt/devkitpro/wups/
-
-    echo "install succeeded"
+    cp -r ../share /opt/devkitpro/wups/
 )
 
 export PATH="/opt/devkitpro/wups/bin:$PATH"
