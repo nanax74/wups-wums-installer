@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-chmod +x ./internal/install-devkitpro-pacman
-chmod +x ./internal/install-wut
-chmod +x ./internal/install-wups-wums
-chmod +x ./internal/pre-install
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-bash ./internal/install-devkitpro-pacman
-bash ./internal/install-wut
-bash ./internal/install-wups-wums
-bash ./internal/pre-install
+(
+    cd "$SCRIPT_DIR"
+
+    chmod +x ./internal/install-devkitpro-pacman
+    chmod +x ./internal/install-wut
+    chmod +x ./internal/install-wups-wums
+    chmod +x ./internal/pre-install
+
+    bash ./internal/install-devkitpro-pacman
+    bash ./internal/install-wut
+    bash ./internal/install-wups-wums
+    bash ./internal/pre-install
+)
